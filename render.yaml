@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rubinimart
+    runtime: docker
+    plan: free
+    region: oregon
+    branch: main
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PORT
+        value: 10000

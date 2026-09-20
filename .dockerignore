@@ -1,0 +1,15 @@
+.git
+.gitignore
+target/
+tomcat.*/
+data/
+*.log
+logs/
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+*.md
+.github/
