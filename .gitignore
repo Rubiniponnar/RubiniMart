@@ -1,0 +1,29 @@
+target/
+*.class
+*.war
+*.ear
+*.jar
+tomcat.*/
+
+
+# H2 Database files
+data/
+*.mv.db
+*.trace.db
+
+# Environment and sensitive configuration
+.env
+.env.local
+config.properties.local
+
+# IDE & Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# Logs
+*.log
+logs/
