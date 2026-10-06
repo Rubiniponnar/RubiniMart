@@ -52,6 +52,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>ChatServlet</servlet-name>
+        <servlet-class>com.rubinimart.controller.ChatServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatServlet</servlet-name>
+        <url-pattern>/api/chat</url-pattern>
+        <url-pattern>/api/v1/chat</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>ApiServlet</servlet-name>
         <servlet-class>com.rubinimart.controller.ApiServlet</servlet-class>
     </servlet>
