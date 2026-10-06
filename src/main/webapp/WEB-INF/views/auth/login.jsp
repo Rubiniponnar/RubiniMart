@@ -28,13 +28,25 @@
         Don't have an account? <a href="${pageContext.request.contextPath}/register" style="color: var(--primary); font-weight: 600;">Create one</a>
     </div>
 
-    <%-- Demo Credentials Quick Reference --%>
-    <div style="margin-top: 2rem; padding: 1rem; background-color: #f8fafc; border-radius: var(--radius); border: 1px dashed var(--border-color); font-size: 0.82rem;">
-        <strong style="display: block; margin-bottom: 0.5rem; color: var(--secondary);">Demo Seed Credentials:</strong>
-        <p><strong>Admin:</strong> admin@mart.com / Admin@123</p>
-        <p><strong>Seller:</strong> techseller@mart.com / Seller@123</p>
-        <p><strong>Buyer:</strong> john.buyer@mart.com / Buyer@123</p>
+    <%-- Default Administrator Credentials --%>
+    <div style="margin-top: 1.75rem; padding: 1rem; background-color: #f8fafc; border-radius: var(--radius); border: 1px dashed var(--border-color); font-size: 0.85rem; text-align: center;">
+        <span style="display: block; font-weight: 600; color: var(--secondary); margin-bottom: 0.35rem;">Default Administrator Login</span>
+        <div style="font-family: monospace; font-size: 0.9rem; color: var(--text-main); font-weight: 600; margin-bottom: 0.5rem;">
+            admin@mart.com &bull; Admin@123
+        </div>
+        <button type="button" onclick="fillAdminCredentials()" class="btn btn-secondary btn-sm" style="font-size: 0.78rem; padding: 0.3rem 0.85rem;">
+            Quick Fill Admin Login
+        </button>
     </div>
+
+    <script>
+    function fillAdminCredentials() {
+        var emailInput = document.getElementById('email');
+        var passInput = document.getElementById('password');
+        if (emailInput) emailInput.value = 'admin@mart.com';
+        if (passInput) passInput.value = 'Admin@123';
+    }
+    </script>
 </div>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
