@@ -10,6 +10,11 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="${pageContext.request.contextPath}/products">Browse</a></li>
+                <li>
+                    <a href="javascript:void(0)" onclick="if(window.openRubiniChat)window.openRubiniChat();" style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; color: #2563eb;">
+                        🤖 AI Assistant
+                    </a>
+                </li>
 
                 <c:choose>
                     <c:when test="${not empty sessionScope.currentUser}">

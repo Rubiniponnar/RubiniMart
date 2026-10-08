@@ -11,6 +11,6 @@
     <p style="font-size: 0.8rem; margin-top: 0.25rem;">Java Servlets · JDBC · Apache Tomcat 9.0.x · H2 Database</p>
 </footer>
 
-<script src="${pageContext.request.contextPath}/static/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/static/js/main.js?v=2.1.0"></script>
 </body>
 </html>

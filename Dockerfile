@@ -12,8 +12,8 @@ RUN mvn dependency:go-offline -B
 # Copy project source code
 COPY src ./src
 
-# Compile application and package classes
-RUN mvn clean compile -DskipTests
+# Compile application and package classes & WAR
+RUN mvn clean package -DskipTests
 
 # Copy runtime dependencies into target/dependency
 RUN mvn dependency:copy-dependencies -DincludeScope=runtime -DoutputDirectory=target/dependency
@@ -32,6 +32,7 @@ RUN apk add --no-cache curl
 COPY --from=builder /app/target/classes ./target/classes
 COPY --from=builder /app/target/dependency ./target/dependency
 COPY --from=builder /app/src/main/webapp ./src/main/webapp
+COPY --from=builder /app/target/RubiniMart ./target/RubiniMart
 
 # Create persistent storage folder for H2 database
 RUN mkdir -p /app/data

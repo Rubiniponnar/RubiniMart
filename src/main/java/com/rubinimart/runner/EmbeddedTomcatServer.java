@@ -47,8 +47,16 @@ public class EmbeddedTomcatServer {
         tomcat.getConnector(); // Initialize default HTTP connector
 
         File webappDir = new File(webappDirLocation);
-        if (!webappDir.exists()) {
-            webappDir = new File("RubiniMart/" + webappDirLocation);
+        if (!webappDir.exists() || !new File(webappDir, "WEB-INF").exists()) {
+            File subDir = new File("RubiniMart/" + webappDirLocation);
+            if (subDir.exists() && new File(subDir, "WEB-INF").exists()) {
+                webappDir = subDir;
+            } else {
+                File assembledDir = new File("target/RubiniMart");
+                if (assembledDir.exists() && new File(assembledDir, "WEB-INF").exists()) {
+                    webappDir = assembledDir;
+                }
+            }
         }
 
         StandardContext ctx = (StandardContext) tomcat.addWebapp("", webappDir.getAbsolutePath());
