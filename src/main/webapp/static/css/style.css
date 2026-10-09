@@ -1,20 +1,29 @@
-/* RubiniMart Modern Responsive CSS */
+/* RubiniMart Modern Responsive CSS — Deep Plum Premium Theme */
 :root {
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-light: #dbeafe;
-  --secondary: #475569;
-  --success: #16a34a;
-  --warning: #ca8a04;
+  /* Deep Plum Theme Palette */
+  --primary: #51204F;             /* Deep Plum */
+  --primary-hover: #6D3268;       /* Hover colour */
+  --primary-light: #F5EBF4;       /* Tinted Soft Plum */
+  --secondary: #351334;           /* Dark Plum */
+  --accent: #C8A2C8;              /* Soft Lavender */
+  --highlight: #D8A7B1;           /* Dusty Rose */
+  --bg-main: #FFF9F5;             /* Soft Ivory */
+  --bg-card: #FFFFFF;             /* White */
+  --text-main: #29232B;           /* Deep Charcoal */
+  --text-muted: #716875;          /* Secondary text */
+  --border-color: #E8DDE8;        /* Borders */
+  --btn-text: #FFFFFF;            /* Button text */
+  --hover: #6D3268;               /* Hover colour */
+
+  /* Utility status accents */
+  --success: #15803d;
+  --warning: #b45309;
   --danger: #dc2626;
-  --bg-main: #f8fafc;
-  --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --border-color: #e2e8f0;
+
+  /* Layout & Elevations */
   --radius: 8px;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow: 0 4px 6px -1px rgba(53, 19, 52, 0.06), 0 2px 4px -2px rgba(53, 19, 52, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(53, 19, 52, 0.1), 0 4px 6px -4px rgba(53, 19, 52, 0.06);
 }
 
 * {
@@ -41,9 +50,9 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow);
+  box-shadow: 0 2px 8px -2px rgba(81, 32, 79, 0.08);
   position: sticky;
   top: 0;
   z-index: 50;
@@ -66,6 +75,11 @@ body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.brand:hover {
+  color: var(--primary-hover);
 }
 
 .brand span {
@@ -83,16 +97,16 @@ body {
   text-decoration: none;
   color: var(--secondary);
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  color: var(--primary-hover);
 }
 
 .nav-badge {
   background-color: var(--primary);
-  color: white;
+  color: var(--btn-text);
   padding: 0.2rem 0.5rem;
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -141,21 +155,22 @@ body {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--highlight);
 }
 
 .card-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  background-color: #f1f5f9;
+  background-color: #FAF2F8;
 }
 
 .card-body {
@@ -171,6 +186,11 @@ body {
   margin-bottom: 0.5rem;
   color: var(--text-main);
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.card-title:hover {
+  color: var(--primary);
 }
 
 .card-category {
@@ -208,30 +228,53 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-primary {
   background-color: var(--primary);
-  color: white;
+  color: var(--btn-text);
+  border-color: var(--primary);
+  box-shadow: 0 2px 4px rgba(81, 32, 79, 0.2);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: var(--btn-text);
+  box-shadow: 0 4px 8px rgba(109, 50, 104, 0.3);
 }
 
 .btn-secondary {
-  background-color: #e2e8f0;
+  background-color: #F5EBF4;
   color: var(--secondary);
+  border-color: var(--border-color);
 }
 
 .btn-secondary:hover {
-  background-color: #cbd5e1;
+  background-color: #E8DDE8;
+  color: var(--primary);
+  border-color: var(--accent);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: var(--btn-text);
 }
 
 .btn-danger {
   background-color: var(--danger);
-  color: white;
+  color: var(--btn-text);
 }
 
 .btn-danger:hover {
@@ -252,9 +295,9 @@ body {
   font-weight: 600;
 }
 
-.badge-pending { background-color: #fef3c7; color: #b45309; }
-.badge-confirmed { background-color: #e0e7ff; color: #4338ca; }
-.badge-shipped { background-color: #cffafe; color: #0e7490; }
+.badge-pending { background-color: #FFF3EA; color: #9A3412; }
+.badge-confirmed { background-color: #F5EBF4; color: var(--primary); border: 1px solid #E8DDE8; }
+.badge-shipped { background-color: #F8EBF4; color: var(--secondary); }
 .badge-delivered { background-color: #dcfce7; color: #15803d; }
 .badge-cancelled { background-color: #fee2e2; color: #b91c1c; }
 
@@ -277,14 +320,15 @@ body {
   font-size: 0.95rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  background-color: white;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: #FFFFFF;
+  color: var(--text-main);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-control:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 3px rgba(81, 32, 79, 0.15);
 }
 
 .field-error {
@@ -297,7 +341,7 @@ body {
 .table-responsive {
   width: 100%;
   overflow-x: auto;
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: var(--radius);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow);
@@ -315,7 +359,7 @@ body {
 }
 
 .table th {
-  background-color: #f8fafc;
+  background-color: #FAF2F8;
   font-weight: 600;
   color: var(--secondary);
 }
@@ -326,7 +370,7 @@ body {
 
 /* Star Rating */
 .star-rating {
-  color: #f59e0b;
+  color: #d97706;
   font-size: 1rem;
   letter-spacing: 2px;
 }
@@ -334,7 +378,7 @@ body {
 /* Footer */
 footer {
   margin-top: auto;
-  background-color: white;
+  background-color: #FFFFFF;
   border-top: 1px solid var(--border-color);
   padding: 1.5rem;
   text-align: center;
@@ -344,6 +388,7 @@ footer {
 
 /* ===================================================================
    AI Chatbot Floating Widget Styles (Section 11 / Phase 3)
+   Deep Plum Theme
    =================================================================== */
 .chat-widget-container {
   position: fixed;
@@ -357,21 +402,22 @@ footer {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
-  border: none;
-  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4), 0 8px 10px -6px rgba(37, 99, 235, 0.3);
+  background: linear-gradient(135deg, #51204F, #351334);
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 10px 25px -5px rgba(81, 32, 79, 0.45), 0 8px 10px -6px rgba(81, 32, 79, 0.35);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .chat-launcher-btn:hover {
+  background: linear-gradient(135deg, #6D3268, #51204F);
   transform: scale(1.08);
-  box-shadow: 0 14px 28px -4px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 14px 28px -4px rgba(109, 50, 104, 0.55);
 }
 
 .chat-launcher-icon {
@@ -399,9 +445,10 @@ footer {
   max-width: calc(100vw - 32px);
   height: 530px;
   max-height: calc(100vh - 110px);
-  background: #ffffff;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(53, 19, 52, 0.2), 0 0 0 1px rgba(81, 32, 79, 0.05);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -414,8 +461,8 @@ footer {
 }
 
 .chat-modal-header {
-  background: linear-gradient(135deg, #1e40af, #2563eb);
-  color: white;
+  background: linear-gradient(135deg, #351334, #51204F);
+  color: #FFFFFF;
   padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
@@ -434,7 +481,7 @@ footer {
 
 .chat-online-status {
   font-size: 0.75rem;
-  opacity: 0.9;
+  opacity: 0.95;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -446,6 +493,7 @@ footer {
   border-radius: 50%;
   background: #34d399;
   display: inline-block;
+  box-shadow: 0 0 6px #34d399;
 }
 
 .chat-modal-actions {
@@ -454,9 +502,9 @@ footer {
 }
 
 .chat-icon-btn {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.18);
   border: none;
-  color: white;
+  color: #FFFFFF;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -465,11 +513,11 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 0.9rem;
-  transition: background 0.2s;
+  transition: background 0.2s ease;
 }
 
 .chat-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .chat-chips-container {
@@ -477,16 +525,16 @@ footer {
   gap: 6px;
   overflow-x: auto;
   padding: 0.6rem 0.8rem;
-  background: #f8fafc;
+  background: #FAF2F8;
   border-bottom: 1px solid var(--border-color);
   scrollbar-width: thin;
 }
 
 .chat-chip {
   white-space: nowrap;
-  background: white;
-  border: 1px solid #cbd5e1;
-  color: #334155;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
   font-size: 0.78rem;
   font-weight: 500;
   padding: 4px 10px;
@@ -496,9 +544,9 @@ footer {
 }
 
 .chat-chip:hover {
-  background: #eff6ff;
-  border-color: #3b82f6;
-  color: #1d4ed8;
+  background: #F5EBF4;
+  border-color: var(--accent);
+  color: var(--primary);
 }
 
 .chat-messages {
@@ -508,7 +556,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
-  background: #fdfdfd;
+  background: #FFF9F5;
 }
 
 .chat-message {
@@ -534,15 +582,16 @@ footer {
 }
 
 .chat-message-bot .chat-bubble {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: #FAF2F8;
+  color: var(--text-main);
+  border: 1px solid #F0E6F0;
   border-bottom-left-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px rgba(81, 32, 79, 0.04);
 }
 
 .chat-message-user .chat-bubble {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: white;
+  background: linear-gradient(135deg, #51204F, #351334);
+  color: #FFFFFF;
   border-bottom-right-radius: 4px;
 }
 
@@ -561,13 +610,13 @@ footer {
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  background: #f8fafc;
+  background: #FAF2F8;
 }
 
 .chat-typing-indicator span {
   width: 6px;
   height: 6px;
-  background: #94a3b8;
+  background: var(--accent);
   border-radius: 50%;
   margin-right: 4px;
   animation: typingBounce 1.2s infinite ease-in-out;
@@ -585,7 +634,7 @@ footer {
   display: flex;
   align-items: center;
   padding: 0.75rem;
-  background: white;
+  background: #FFFFFF;
   border-top: 1px solid var(--border-color);
   gap: 8px;
 }
@@ -597,12 +646,15 @@ footer {
   border-radius: 24px;
   font-size: 0.9rem;
   outline: none;
-  transition: border-color 0.2s;
+  background: #FFF9F5;
+  color: var(--text-main);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .chat-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(81, 32, 79, 0.15);
 }
 
 .chat-send-btn {
@@ -610,18 +662,17 @@ footer {
   height: 38px;
   border-radius: 50%;
   background: var(--primary);
-  color: white;
+  color: #FFFFFF;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1rem;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .chat-send-btn:hover {
   background: var(--primary-hover);
   transform: scale(1.05);
 }
-

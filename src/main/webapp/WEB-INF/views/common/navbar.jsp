@@ -11,7 +11,7 @@
             <ul class="nav-links">
                 <li><a href="${pageContext.request.contextPath}/products">Browse</a></li>
                 <li>
-                    <a href="javascript:void(0)" onclick="if(window.openRubiniChat)window.openRubiniChat();" style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; color: #2563eb;">
+                    <a href="javascript:void(0)" onclick="if(window.openRubiniChat)window.openRubiniChat();" style="display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; color: var(--primary);">
                         🤖 AI Assistant
                     </a>
                 </li>
@@ -41,7 +41,7 @@
 
                         <li style="margin-left: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">
                             Hello, <strong><c:out value="${sessionScope.currentUser.name}"/></strong>
-                            <span class="badge" style="background-color: #e2e8f0; color: #334155; margin-left: 0.25rem;">
+                            <span class="badge" style="background-color: #F5EBF4; color: var(--primary); margin-left: 0.25rem;">
                                 <c:out value="${sessionScope.currentUser.role}"/>
                             </span>
                         </li>

@@ -27,7 +27,7 @@
 
     <div style="background: white; padding: 1.5rem; border-radius: var(--radius); border: 1px solid var(--border-color); box-shadow: var(--shadow);">
         <div style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase;">Total Orders</div>
-        <div style="font-size: 2.25rem; font-weight: bold; color: #8b5cf6; margin-top: 0.5rem;"><c:out value="${totalOrders}"/></div>
+        <div style="font-size: 2.25rem; font-weight: bold; color: var(--primary); margin-top: 0.5rem;"><c:out value="${totalOrders}"/></div>
         <a href="${pageContext.request.contextPath}/admin/orders" style="color: var(--primary); font-size: 0.85rem; text-decoration: none; display: inline-block; margin-top: 0.5rem;">View all orders &rarr;</a>
     </div>
 

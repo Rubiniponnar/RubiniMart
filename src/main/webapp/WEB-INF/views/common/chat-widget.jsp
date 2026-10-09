@@ -3,10 +3,10 @@
 
 <!-- ===================================================================
      RubiniMart AI Chatbot Floating Widget (Section 11 / Phase 3)
-     Self-contained Production Build (Inline CSS & JS for zero-failure)
+     Self-contained Production Build — Deep Plum Theme
      =================================================================== -->
 <style>
-/* Scoped Self-Contained AI Chatbot Styles */
+/* Scoped Self-Contained AI Chatbot Styles — Deep Plum Theme */
 #rubini-chat-widget {
     position: fixed !important;
     bottom: 24px !important;
@@ -22,19 +22,20 @@
     padding: 10px 18px 10px 14px !important;
     height: 54px !important;
     border-radius: 28px !important;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    background: linear-gradient(135deg, #51204F, #351334) !important;
     color: #ffffff !important;
     border: 2px solid #ffffff !important;
-    box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.5), 0 8px 12px -6px rgba(37, 99, 235, 0.3) !important;
+    box-shadow: 0 10px 25px -5px rgba(81, 32, 79, 0.5), 0 8px 12px -6px rgba(81, 32, 79, 0.3) !important;
     cursor: pointer !important;
     position: relative !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
     text-decoration: none !important;
 }
 
 #chat-launcher-btn:hover {
     transform: scale(1.05) !important;
-    box-shadow: 0 14px 28px -4px rgba(37, 99, 235, 0.6) !important;
+    background: linear-gradient(135deg, #6D3268, #51204F) !important;
+    box-shadow: 0 14px 28px -4px rgba(109, 50, 104, 0.6) !important;
 }
 
 .chat-launcher-icon {
@@ -70,7 +71,8 @@
     max-height: calc(100vh - 100px) !important;
     background: #ffffff !important;
     border-radius: 18px !important;
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #E8DDE8 !important;
+    box-shadow: 0 24px 48px rgba(53, 19, 52, 0.2), 0 0 0 1px rgba(81, 32, 79, 0.08) !important;
     flex-direction: column !important;
     overflow: hidden !important;
     animation: rubiniChatFadeIn 0.22s ease-out !important;
@@ -82,7 +84,7 @@
 }
 
 .chat-modal-header {
-    background: linear-gradient(135deg, #1e40af, #2563eb) !important;
+    background: linear-gradient(135deg, #351334, #51204F) !important;
     color: #ffffff !important;
     padding: 1rem 1.15rem !important;
     display: flex !important;
@@ -147,16 +149,16 @@
     gap: 6px !important;
     overflow-x: auto !important;
     padding: 0.65rem 0.85rem !important;
-    background: #f8fafc !important;
-    border-bottom: 1px solid #e2e8f0 !important;
+    background: #FAF2F8 !important;
+    border-bottom: 1px solid #E8DDE8 !important;
     scrollbar-width: thin !important;
 }
 
 .chat-chip {
     white-space: nowrap !important;
     background: #ffffff !important;
-    border: 1px solid #cbd5e1 !important;
-    color: #334155 !important;
+    border: 1px solid #E8DDE8 !important;
+    color: #29232B !important;
     font-size: 0.78rem !important;
     font-weight: 600 !important;
     padding: 5px 11px !important;
@@ -166,9 +168,9 @@
 }
 
 .chat-chip:hover {
-    background: #eff6ff !important;
-    border-color: #3b82f6 !important;
-    color: #1d4ed8 !important;
+    background: #F5EBF4 !important;
+    border-color: #C8A2C8 !important;
+    color: #51204F !important;
 }
 
 .chat-messages {
@@ -178,7 +180,7 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 0.85rem !important;
-    background: #fcfcfd !important;
+    background: #FFF9F5 !important;
 }
 
 .chat-message {
@@ -204,21 +206,22 @@
 }
 
 .chat-message-bot .chat-bubble {
-    background: #f1f5f9 !important;
-    color: #0f172a !important;
+    background: #FAF2F8 !important;
+    color: #29232B !important;
     border-bottom-left-radius: 4px !important;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid #F0E6F0 !important;
+    box-shadow: 0 1px 2px rgba(81, 32, 79, 0.04) !important;
 }
 
 .chat-message-user .chat-bubble {
-    background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+    background: linear-gradient(135deg, #51204F, #351334) !important;
     color: #ffffff !important;
     border-bottom-right-radius: 4px !important;
 }
 
 .chat-timestamp {
     font-size: 0.7rem !important;
-    color: #94a3b8 !important;
+    color: #716875 !important;
     margin-top: 3px !important;
     padding: 0 4px !important;
 }
@@ -231,13 +234,13 @@
     display: flex !important;
     align-items: center !important;
     padding: 0.5rem 1rem !important;
-    background: #f8fafc !important;
+    background: #FAF2F8 !important;
 }
 
 .chat-typing-indicator span {
     width: 6px !important;
     height: 6px !important;
-    background: #94a3b8 !important;
+    background: #C8A2C8 !important;
     border-radius: 50% !important;
     margin-right: 4px !important;
     animation: typingBounce 1.2s infinite ease-in-out !important;
@@ -256,31 +259,32 @@
     align-items: center !important;
     padding: 0.75rem !important;
     background: #ffffff !important;
-    border-top: 1px solid #e2e8f0 !important;
+    border-top: 1px solid #E8DDE8 !important;
     gap: 8px !important;
 }
 
 .chat-input {
     flex: 1 !important;
     padding: 0.65rem 0.95rem !important;
-    border: 1px solid #cbd5e1 !important;
+    border: 1px solid #E8DDE8 !important;
     border-radius: 24px !important;
     font-size: 0.9rem !important;
     outline: none !important;
-    background: #f8fafc !important;
+    background: #FFF9F5 !important;
+    color: #29232B !important;
 }
 
 .chat-input:focus {
-    border-color: #2563eb !important;
+    border-color: #51204F !important;
     background: #ffffff !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+    box-shadow: 0 0 0 3px rgba(81, 32, 79, 0.15) !important;
 }
 
 .chat-send-btn {
     width: 40px !important;
     height: 40px !important;
     border-radius: 50% !important;
-    background: #2563eb !important;
+    background: #51204F !important;
     color: #ffffff !important;
     border: none !important;
     cursor: pointer !important;
@@ -292,7 +296,7 @@
 }
 
 .chat-send-btn:hover {
-    background: #1d4ed8 !important;
+    background: #6D3268 !important;
     transform: scale(1.06) !important;
 }
 </style>
@@ -346,7 +350,7 @@
         <!-- Typing Indicator -->
         <div id="chat-typing-indicator" class="chat-typing-indicator" style="display: none;">
             <span></span><span></span><span></span>
-            <small style="margin-left: 8px; color: #64748b;">RubiniMart AI is typing...</small>
+            <small style="margin-left: 8px; color: #716875;">RubiniMart AI is typing...</small>
         </div>
 
         <!-- Input Footer -->
@@ -498,7 +502,7 @@
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
                 .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: #2563eb; text-decoration: underline;">$1</a>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: #51204F; text-decoration: underline;">$1</a>')
                 .replace(/^• (.*$)/gim, '&bull; $1')
                 .replace(/\n/g, '<br>');
             return escaped;
